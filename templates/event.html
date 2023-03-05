@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ eventdata.name }}</title>
+    <style>
+      /* Define some basic styles for the page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{ eventdata.name }}</h1>
+    <p><strong>Date:</strong> {{ eventdata.date }}</p>
+    <p><strong>Location:</strong> {{ eventdata.location }}</p>
+    <p><strong>Description:</strong> {{ eventdata.description }}</p>
+    <p><strong>Attendees:</strong></p>
+    <ul>
+    {% for attendee in eventdata.attendees %}
+      <li>{{ attendee }}</li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>
